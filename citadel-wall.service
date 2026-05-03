@@ -1,0 +1,13 @@
+[Unit]
+Description=The Wall — Citadel firewall monitor
+After=network.target
+
+[Service]
+Type=simple
+User=boas
+ExecStart=/usr/bin/python3 -u /home/boas/cyberdeck/wall_watcher.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
